@@ -119,7 +119,7 @@ function cloudiaryStorageInternal({ acl, configs, options }: CloudiaryStorageOpt
           admin: { readOnly: true },
         },
       ],
-      generateURL: getGenerateURL({ getStorageService, cloud_name: configs.cloud_name, options }),
+      generateURL: getGenerateURL({ getStorageClient, cloud_name: configs.cloud_name, options }),
       handleDelete: getHandleDelete({ getStorageService, cloud_name: configs.cloud_name, options }),
       handleUpload: getHandleUpload({
         acl,

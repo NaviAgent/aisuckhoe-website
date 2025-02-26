@@ -1,7 +1,7 @@
 {
-  "name": "my-project",
+  "name": "@naviagent/aisuckhoe-website",
   "version": "1.0.0",
-  "description": "Website template for Payload",
+  "description": "AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình",
   "license": "MIT",
   "type": "module",
   "scripts": {

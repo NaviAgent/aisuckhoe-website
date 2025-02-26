@@ -47,7 +47,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: 'Payload Website Template',
+                  text: 'AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình',
                   version: 1,
                 },
               ],
@@ -666,9 +666,9 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
       },
     ],
     meta: {
-      description: 'An open-source website built with Payload and Next.js.',
+      description: 'AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình',
       image: heroImage.id,
-      title: 'Payload Website Template',
+      title: 'Hỏi AI sức khoẻ',
     },
     title: 'Home',
   }
