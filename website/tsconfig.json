@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "../**/*.ts",
+    "../**/*.tsx",
+    "../.next/types/**/*.ts",
+    "../redirects.js",
+    "../next.config.js",
+    "../next-sitemap.config.cjs",
+    ".next/types/**/*.ts"
+  ]
+}
