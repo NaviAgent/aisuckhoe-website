@@ -54,9 +54,7 @@ export const cloudiaryStorage: CloudiaryStoragePlugin =
     const adapter = cloudiaryStorageInternal(cloudiaryStorageOptions)
 
     // Add adapter to each collection option object
-    const collectionsWithAdapter: CloudStoragePluginOptions['collections'] = Object.entries(
-      cloudiaryStorageOptions.collections,
-    ).reduce(
+    const collectionsWithAdapter = Object.entries(cloudiaryStorageOptions.collections).reduce(
       (acc, [slug, collOptions]) => ({
         ...acc,
         [slug]: {

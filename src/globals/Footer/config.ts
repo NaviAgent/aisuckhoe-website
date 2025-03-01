@@ -1,18 +1,13 @@
-import type { Block, Field } from 'payload'
+import type { Field, GlobalConfig } from 'payload'
 
+import { link } from '@/fields/link'
+import { revalidateFooter } from './hooks/revalidateFooter'
 import {
-  BlocksFeature,
   FixedToolbarFeature,
   HeadingFeature,
-  HorizontalRuleFeature,
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
-
-import { link } from '@/fields/link'
-import { Banner } from '../Banner/config'
-import { Code } from '../Code/config'
-import { MediaBlock } from '../MediaBlock/config'
 
 const columnFields: Field[] = [
   {
@@ -45,11 +40,9 @@ const columnFields: Field[] = [
       features: ({ rootFeatures }) => {
         return [
           ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-          BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
+          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
           FixedToolbarFeature(),
           InlineToolbarFeature(),
-          HorizontalRuleFeature(),
         ]
       },
     }),
@@ -68,17 +61,49 @@ const columnFields: Field[] = [
   }),
 ]
 
-export const Content: Block = {
-  slug: 'content',
-  interfaceName: 'ContentBlock',
+export const Footer: GlobalConfig = {
+  slug: 'footer',
+  access: {
+    read: () => true,
+  },
   fields: [
+    // {
+    //   name: 'navItems',
+    //   type: 'array',
+    //   fields: [
+    //     link({
+    //       appearances: false,
+    //     }),
+    //   ],
+    //   maxRows: 6,
+    //   admin: {
+    //     initCollapsed: true,
+    //     components: {
+    //       RowLabel: '@/Footer/RowLabel#RowLabel',
+    //     },
+    //   },
+    // },
     {
-      name: 'columns',
+      name: 'navColumns',
       type: 'array',
+      fields: [
+        {
+          name: 'columns',
+          type: 'array',
+          fields: columnFields,
+          maxRows: 6,
+          admin: {
+            initCollapsed: true,
+          },
+        },
+      ],
+      maxRows: 6,
       admin: {
         initCollapsed: true,
       },
-      fields: columnFields,
     },
   ],
+  hooks: {
+    afterChange: [revalidateFooter],
+  },
 }
