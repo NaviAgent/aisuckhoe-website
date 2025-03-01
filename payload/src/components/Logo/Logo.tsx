@@ -25,7 +25,7 @@ export const Logo = (props: Props) => {
       fetchPriority={priority}
       decoding="async"
       className={clsx('max-w-[9.375rem] w-fit h-[34px]', className)}
-      src={`${getClientSideURL()}${'/logo-light.png'}?${Math.floor(Date.now() / 1000)}`}
+      src={`https://res.cloudinary.com/ivanistao/image/upload/t_Profile/v1740834460/aisuckhoe/logo/logo-light_a53s1a.png?${Math.floor(Date.now() / 1000)}`}
     ></Image>
   )
 }
