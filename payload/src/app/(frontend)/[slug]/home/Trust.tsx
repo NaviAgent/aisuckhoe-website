@@ -21,6 +21,8 @@ export default function Trust() {
             <Image
               key={index}
               src={logo}
+              width={50}
+              height={50}
               alt={`Trust logo ${index + 1}`}
               className="h-12 object-contain"
             ></Image>

@@ -17,6 +17,8 @@ export default function Logos() {
           <Image
             key={index}
             src={logo}
+            width={200}
+            height={200}
             alt={`Partner ${index + 1}`}
             className="h-12 object-contain"
           ></Image>

@@ -1,9 +1,5 @@
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import './globals.css'
-import Script from 'next/script'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import { cn } from '@/utilities/ui'
 import { Providers } from '@/providers'
 
 export const metadata = {
@@ -13,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />

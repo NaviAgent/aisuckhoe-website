@@ -1,31 +1,28 @@
 import type { Metadata } from 'next'
 
 import { cn } from '@payload/utilities/ui'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
 import React from 'react'
 
 import { Providers } from '@payload/providers'
 import { InitTheme } from '@payload/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@payload/utilities/mergeOpenGraph'
-import { draftMode } from 'next/headers'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import './globals.css'
 import { getServerSideURL } from '@payload/utilities/getURL'
+import websiteConfig from '@website/website.config'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { isEnabled } = await draftMode()
-
+  const config = await websiteConfig
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <GoogleTagManager gtmId={config.gtm.id} />
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
@@ -35,6 +32,6 @@ export const metadata: Metadata = {
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',
-    creator: '@payloadcms',
+    creator: '@NaviAgent',
   },
 }

@@ -1,8 +1,4 @@
 import type { Metadata } from 'next'
-
-import { cn } from '@payload/utilities/ui'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
 import React from 'react'
 
 import { AdminBar } from '@payload/components/AdminBar'
@@ -20,26 +16,16 @@ export default async function SlugLayout({ children }: { children: React.ReactNo
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
-      <head>
-        <InitTheme />
-        <link href="/favicon.ico" rel="icon" sizes="32x32" />
-        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-      </head>
-      <body>
-        <Providers>
-          <AdminBar
-            adminBarProps={{
-              preview: isEnabled,
-            }}
-          />
-
-          <Header />
-          {children}
-          <Footer />
-        </Providers>
-      </body>
-    </html>
+    <Providers>
+      <AdminBar
+        adminBarProps={{
+          preview: isEnabled,
+        }}
+      />
+      <Header />
+      {children}
+      <Footer />
+    </Providers>
   )
 }
 
@@ -48,6 +34,6 @@ export const metadata: Metadata = {
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',
-    creator: '@payloadcms',
+    creator: '@NaviAgent',
   },
 }
