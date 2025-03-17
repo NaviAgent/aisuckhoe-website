@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /admin/*
 
 # Host
-Host: https://aisuckhoe.com
+Host: http://localhost:3000
 
 # Sitemaps
-Sitemap: https://aisuckhoe.com/sitemap.xml
+Sitemap: http://localhost:3000/sitemap.xml

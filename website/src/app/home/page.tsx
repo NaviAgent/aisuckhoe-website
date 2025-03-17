@@ -7,10 +7,11 @@ import Hero from './Hero'
 import Header from './Header'
 import { TelegramCTA, WebAppCTA } from './CTA'
 import PageClient from './page.client'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình</title>
       </Head>
@@ -40,10 +41,11 @@ export default function Home() {
 
       <main className="px-6 sm:p-0">
         <TelegramCTA />
-      </main>
-
-      <Footer /> */}
+      </main> */}
       </div>
-    </div>
+
+      <Footer />
+      {/* <footer className="absolute bottom-0 w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground"></footer> */}
+    </>
   )
 }

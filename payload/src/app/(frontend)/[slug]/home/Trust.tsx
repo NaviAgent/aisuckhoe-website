@@ -2,10 +2,10 @@ import Image from 'next/image'
 
 export default function Trust() {
   const trustLogos = [
-    'https://via.placeholder.com/50', // Replace with actual logo URLs
-    'https://via.placeholder.com/50',
-    'https://via.placeholder.com/50',
-    'https://via.placeholder.com/50',
+    'https://picsum.photos/50', // Replace with actual logo URLs
+    'https://picsum.photos/50',
+    'https://picsum.photos/50',
+    'https://picsum.photos/50',
   ]
 
   return (

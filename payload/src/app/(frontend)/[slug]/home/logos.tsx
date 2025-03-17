@@ -14,14 +14,14 @@ export default function Logos() {
     <section className="py-12 px-4 bg-gray-50">
       <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8">
         {logos.map((logo, index) => (
-          <Image
+          <img
             key={index}
             src={logo}
             width={200}
             height={200}
             alt={`Partner ${index + 1}`}
             className="h-12 object-contain"
-          ></Image>
+          ></img>
         ))}
       </div>
     </section>

@@ -46,9 +46,7 @@ export const seed = async ({
     globals.map((global) =>
       payload.updateGlobal({
         slug: global,
-        data: {
-          navItems: [],
-        },
+        data: {},
         depth: 0,
         context: {
           disableRevalidate: true,
@@ -340,18 +338,7 @@ export const seed = async ({
     }),
     payload.updateGlobal({
       slug: 'footer',
-      data: {
-        navItems: [
-          {
-            link: {
-              type: 'custom',
-              label: 'Git',
-              newTab: true,
-              url: 'https://github.com/NaviAgent/aisuckhoe-website',
-            },
-          },
-        ],
-      },
+      data: {},
     }),
   ])
 

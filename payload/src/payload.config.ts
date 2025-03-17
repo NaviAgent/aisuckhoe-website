@@ -57,7 +57,15 @@ export default buildConfig({
   editor: defaultLexical,
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: process.env.DATABASE_URI || undefined,
+      host: process.env.DATABASE_HOST || 'postgres',
+      port: Number(process.env.DATABASE_PORT || 5432),
+      database: process.env.DATABASE_NAME || 'payload',
+      user: process.env.DATABASE_USERNAME || 'postgres',
+      password: process.env.DATABASE_PASSWORD || 'postgres',
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
   }),
   collections,

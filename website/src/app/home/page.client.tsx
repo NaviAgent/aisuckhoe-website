@@ -1,6 +1,5 @@
 'use client'
 import { useHeaderTheme } from '@payload/providers/HeaderTheme'
-import Script from 'next/script'
 import React, { useEffect } from 'react'
 
 const PageClient: React.FC = () => {
@@ -9,12 +8,6 @@ const PageClient: React.FC = () => {
 
   useEffect(() => {
     setHeaderTheme('light')
-    // if (window.particlesJS) {
-    //   window.particlesJS('particles-js', {
-    //     particles: { number: { value: 50 }, size: { value: 3 }, move: { speed: 1 } },
-    //     interactivity: { events: { onhover: { enable: true, mode: 'repulse' } } },
-    //   })
-    // }
   }, [setHeaderTheme])
   return (
     <React.Fragment>

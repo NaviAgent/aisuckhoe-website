@@ -16,7 +16,7 @@ export async function Footer() {
     return null
   }
 
-  const { navItems, navColumns } = footerData
+  const { navColumns } = footerData
 
   const colsSpanClasses = {
     full: '12',
