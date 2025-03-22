@@ -27,11 +27,9 @@
       }
     ],
     "paths": {
-      "@payload-config": ["./payload/src/payload.config.ts"],
       "react": ["./node_modules/@types/react"],
-      "@/*": ["./payload/src/*"],
-      "@payload/*": ["./payload/src/*"],
-      "@website/*": ["./website/src/*"]
+      "@/*": ["./src/*"],
+      "@website/*": ["./src/*"]
     }
   },
   "include": [
