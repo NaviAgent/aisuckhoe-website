@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Header from '@website/components/Header'
-import Footer from '@website/components/Footer'
+import Footer from '@/components/Footer'
 
 export default function FAQ() {
   return (
@@ -9,7 +9,7 @@ export default function FAQ() {
         <title>AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình</title>
       </Head>
 
-      <Header />
+      <Header isAbsolute={true} />
 
       <div>
         <title>FAQ</title>

@@ -4,12 +4,16 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const Header = () => {
+interface HeaderProps {
+  isAbsolute: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ isAbsolute }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const logoURL = `https://res.cloudinary.com/ivanistao/image/upload/t_Profile/v1740834460/aisuckhoe/logo/logo-light_a53s1a.png?${Math.floor(Date.now() / 100000)}`
 
   return (
-    <header className="absolute w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground">
+    <header className={`${isAbsolute ? 'absolute' : 'relative'} w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground`}>
       {/* Logo */}
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center space-x-2">

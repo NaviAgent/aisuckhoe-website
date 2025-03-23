@@ -3,9 +3,15 @@
 // import websiteConfig from '@website/website.config'
 import Link from 'next/link'
 
-const Footer = () => {
+interface FooterProps {
+  isAbsolute?: boolean;
+}
+
+const Footer: React.FC<FooterProps> = ({ isAbsolute = true }) => {
+  const positionClass = isAbsolute ? 'absolute' : 'relative';
+
   return (
-    <footer className="absolute bottom-0 w-full z-10 bg-background text-foreground py-6 md:py-10">
+    <footer className={`${positionClass} bottom-0 w-full z-10 bg-background text-foreground py-6 md:py-10`}>
       <div className="container mx-auto px-6 lg:px-20">
         {/* Footer Bottom */}
         {/* <div className="mt-6 border-t border-border flex flex-col lg:flex-row items-center justify-between"></div> */}

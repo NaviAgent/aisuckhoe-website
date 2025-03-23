@@ -2,7 +2,7 @@ import Head from 'next/head'
 import PricingPlans from './PricingPlans'
 import Features from './Features'
 import FAQ from './FAQ'
-import Footer from './Footer'
+import Footer from '@website/components/Footer'
 import Hero from './Hero'
 import Header from './Header'
 import { TelegramCTA, WebAppCTA } from './CTA'
@@ -44,7 +44,7 @@ export default function Home() {
       </main> */}
       </div>
 
-      <Footer />
+      <Footer isAbsolute={true} />
       {/* <footer className="absolute bottom-0 w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground"></footer> */}
     </>
   )

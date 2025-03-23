@@ -3,8 +3,8 @@ import { Heart, MessageCircle, Facebook, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import Header from '@website/components/Header'
-import Footer from '@website/components/Footer'
 import { ZaloIcon } from '@website/components/icons/zalo'
+import Footer from '@/components/Footer'
 
 export default function ContactPage() {
   return (
@@ -13,7 +13,7 @@ export default function ContactPage() {
         <title>AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình</title>
       </Head>
 
-      <Header />
+      <Header isAbsolute={true} />
 
       <div className="min-h-screen">
         <div className="container mx-auto px-4 py-24">
