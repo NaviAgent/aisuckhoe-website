@@ -32,7 +32,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        Ngày ra mắt 08/03/2025 giờ Việt Nam
+        Ngày ra mắt 28/03/2025 giờ Việt Nam
       </motion.p>
     </section>
   )

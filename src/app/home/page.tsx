@@ -4,10 +4,11 @@ import Features from './Features'
 import FAQ from './FAQ'
 import Footer from '@website/components/Footer'
 import Hero from './Hero'
-import Header from './Header'
+// import Header from './Header'
 import { TelegramCTA, WebAppCTA } from './CTA'
 import PageClient from './page.client'
 import Link from 'next/link'
+import Header from '@/components/Header'
 
 export default function Home() {
   return (
@@ -16,14 +17,19 @@ export default function Home() {
         <title>AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình</title>
       </Head>
 
-      <PageClient />
+      <main className="flex flex-col justify-between min-h-screen">
+        <PageClient />
+        <Header isAbsolute={false} />
 
-      <Header />
+        <div className="flex-1 container mx-auto px-4 bg-background">
+          <Hero />
+        </div>
 
-      <div className="sm:space-y-24">
-        <Hero />
+        <Footer isAbsolute={false} />
+      </main>
 
-        {/* <main id="features" className=" container px-6 sm:p-0">
+      {/* <div className="flex-1 sm:space-y-24"> */}
+      {/* <main id="features" className=" container px-6 sm:p-0">
         <Features />
       </main>
 
@@ -42,9 +48,8 @@ export default function Home() {
       <main className="px-6 sm:p-0">
         <TelegramCTA />
       </main> */}
-      </div>
+      {/* </div> */}
 
-      <Footer isAbsolute={true} />
       {/* <footer className="absolute bottom-0 w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground"></footer> */}
     </>
   )

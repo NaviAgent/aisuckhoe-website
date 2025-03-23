@@ -28,7 +28,7 @@ const Header = () => {
           Roadmap
         </Link>
         <Link href="/pricing" className="hover:text-primary">
-          Pricing
+          Gói dịch vụ
         </Link>
       </nav> */}
 
@@ -50,14 +50,14 @@ const Header = () => {
             Roadmap
           </Link>
           <Link href="/pricing" className="hover:text-primary" onClick={() => setMenuOpen(false)}>
-            Pricing
+            Gói dịch vụ
           </Link>
           {/* Get Started Button */}
           <Link
             href="https://hoi.aisuckhoe.com"
             className="hidden md:block px-4 py-2 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/80 transition"
           >
-            Sign in
+            Đăng nhập
           </Link>
         </div>
       )}

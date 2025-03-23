@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 interface HeaderProps {
-  isAbsolute: boolean;
+  isAbsolute: boolean
 }
 
 const Header: React.FC<HeaderProps> = ({ isAbsolute }) => {
@@ -13,7 +13,9 @@ const Header: React.FC<HeaderProps> = ({ isAbsolute }) => {
   const logoURL = `https://res.cloudinary.com/ivanistao/image/upload/t_Profile/v1740834460/aisuckhoe/logo/logo-light_a53s1a.png?${Math.floor(Date.now() / 100000)}`
 
   return (
-    <header className={`${isAbsolute ? 'absolute' : 'relative'} w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground`}>
+    <header
+      className={`${isAbsolute ? 'absolute' : 'relative'} w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground`}
+    >
       {/* Logo */}
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center space-x-2">
@@ -30,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ isAbsolute }) => {
           Roadmap
         </Link>
         <Link href="/pricing" className="hover:text-primary">
-          Pricing
+          Gói dịch vụ
         </Link>
       </nav> */}
 
@@ -52,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ isAbsolute }) => {
             Roadmap
           </Link>
           <Link href="/pricing" className="hover:text-primary" onClick={() => setMenuOpen(false)}>
-            Pricing
+            Gói dịch vụ
           </Link>
           {/* Get Started Button */}
           <Link

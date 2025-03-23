@@ -47,9 +47,9 @@
 
     --radius: 0.2rem;
 
-    --success: 196 52% 74%; /* Green for success */
-    --warning: 34 89% 85%; /* Yellow for warnings */
-    --error: 10 100% 86%; /* Red for errors */
+    --success: 155 31% 70%; /* Green for success */
+    --warning: 34 42% 77%; /* Yellow for warnings */
+    --error: 16 76% 55%; /* Red for errors */
   }
 
   [data-theme='dark'] {

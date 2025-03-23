@@ -1,0 +1,6 @@
+.popular-card {
+    transform: scale(1.1); /* Phóng to nhẹ card */
+    border: 2px solid #3b82f6; /* Thêm viền xanh để nổi bật (màu primary) */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Shadow lớn hơn */
+    z-index: 10; /* Đưa card lên trên các card khác */
+  }

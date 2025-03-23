@@ -5,130 +5,92 @@ import { Button } from '@/components/ui/button'
 import Header from '@website/components/Header'
 import { ZaloIcon } from '@website/components/icons/zalo'
 import Footer from '@/components/Footer'
+import globalConfig from '@/global.config'
 
 export default function ContactPage() {
+  const supportEmail = globalConfig.app.supportEmail
+  const socialLinks = [
+    {
+      name: 'X',
+      href: 'https://x.com/aisuckhoe',
+      icon: <Twitter className="w-6 h-6 text-primary" />,
+      description: 'Kết nối tài khoản trên X',
+    },
+    {
+      name: 'Facebook',
+      href: 'https://facebook.com/aisuckhoe',
+      icon: <Facebook className="w-6 h-6 text-primary" />,
+      description: 'Kết nối tài khoản fanpage Facebook',
+    },
+    {
+      name: 'Zalo',
+      href: 'https://zalo.me/aisuckhoe',
+      icon: <ZaloIcon className="w-6 h-6 text-primary" />,
+      description: 'Kết nối tài khoản trên Zalo',
+    },
+  ]
+
   return (
     <>
       <Head>
         <title>AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình</title>
       </Head>
+      <main className="flex flex-col justify-between min-h-screen">
+        <Header isAbsolute={false} />
 
-      <Header isAbsolute={true} />
+        <div className="flex-1 container max-w-6xl mx-auto px-4 bg-background">
+          <div className="text-left my-12">
+            <h1 className="text-4xl font-bold mb-16 text-foreground">Liên hệ</h1>
+          </div>
 
-      <div className="min-h-screen">
-        <div className="container mx-auto px-4 py-24">
-          <h1 className="text-5xl font-bold mb-16">Contact</h1>
-
+          {/* Contact Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Contact Product Support */}
-            <div className="border-t border-gray-800 pt-8">
+            <div className="p-6 rounded-lg shadow-md bg-card">
               <div className="flex items-center mb-6">
-                <MessageCircle className="w-10 h-10" />
+                <MessageCircle className="w-10 h-10 text-primary" />
               </div>
-              <h2 className="text-2xl font-semibold mb-3">Contact Product Support</h2>
-              <p className="text-gray-400 mb-6">
-                For all things related to AI Sức Khỏe and our products.
+              <h2 className="text-2xl font-semibold mb-3 text-foreground">Thắc mắc về dịch vụ</h2>
+              <p className="text-muted-foreground mb-6">
+                Mọi thắc mắc về sản phẩm công nghệ AI Sức Khỏe xin gửi về địa chỉ mail dưới đây
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href={`mailto:${process.env.NEXT_PUBLIC_SUPPORT_EMAIL}`}
-                  className="rounded-full border-gray-700 hover:bg-gray-800 outline outline-1 outline-gray-700 px-4 py-2 text-muted-foreground "
+                  href={`mailto:${supportEmail}`}
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none data-[state=open]:bg-secondary/50 bg-primary text-primary-foreground hover:bg-primary/80 px-4 py-2"
                 >
-                  EMAIL SUPPORT
+                  Email Support
                 </Link>
-                {/* <Button
-                  variant="outline"
-                  className="rounded-full border-gray-700 hover:bg-gray-800"
-                >
-                  CALL SUPPORT
-                </Button> */}
               </div>
             </div>
-
-            {/* Contact Sales */}
-            {/* <div className="border-t border-gray-800 pt-8">
-              <div className="flex items-center mb-6">
-                <Heart className="w-10 h-10" />
-              </div>
-              <h2 className="text-2xl font-semibold mb-3">Contact Sales</h2>
-              <p className="text-gray-400 mb-6">Discover how we can work together.</p>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  variant="outline"
-                  className="rounded-full border-gray-700 hover:bg-gray-800"
-                >
-                  EMAIL SALES
-                </Button>
-              </div>
-            </div> */}
           </div>
 
           {/* Social Media Links */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-            {/* X (Twitter) */}
-            <Link
-              href="https://x.com/aisuckhoe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
-            >
-              <div className="flex items-center mb-4">
-                <Twitter className="w-10 h-10" />
-              </div>
-              <h2 className="text-2xl font-semibold mb-2">Visit on X</h2>
-              <p className="text-gray-400 mb-4">Visit our official X account.</p>
-            </Link>
-
-            {/* Facebook */}
-            <Link
-              href="https://facebook.com/aisuckhoe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
-            >
-              <div className="flex items-center mb-6">
-                <Facebook className="w-10 h-10" />
-              </div>
-              <h2 className="text-2xl font-semibold mb-3">Visit on Facebook</h2>
-              <p className="text-gray-400 mb-6">Visit our official Facebook page.</p>
-            </Link>
-
-            {/* Zalo */}
-            <Link
-              href="https://zalo.me/aisuckhoe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-200"
-            >
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 flex items-center justify-center font-bold text-xl">
-                  <ZaloIcon></ZaloIcon>
-                </div>
-              </div>
-              <h2 className="text-2xl font-semibold mb-3">Visit on Zalo</h2>
-              <p className="text-gray-400 mb-6">Visit our official Zalo community.</p>
-            </Link>
+          <div className="mt-20">
+            <h2 className="text-3xl font-semibold mb-8 text-foreground">
+              Kết nối và follow đội ngũ
+            </h2>
+            <div className="grid grid-rows-1 md:grid-rows-3 gap-8">
+              {socialLinks.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 bg-card"
+                >
+                  <div className="flex items-center mb-4">
+                    {social.icon}
+                    <h3 className="text-xl font-semibold ml-2 text-foreground">{social.name}</h3>
+                  </div>
+                  <p className="text-muted-foreground">{social.description}</p>
+                </Link>
+              ))}
+            </div>
           </div>
-
-          {/* Footer */}
-          {/* <div className="mt-20 grid grid-cols-2 gap-8 border-t border-gray-800 pt-8">
-            <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">MEDIA</h3>
-              <a href="mailto:media@aisuckhoe.vn" className=" hover:text-primary">
-                media@aisuckhoe.vn
-              </a>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-400 mb-2">SAFETY</h3>
-              <a href="mailto:safety@aisuckhoe.vn" className=" hover:text-primary">
-                safety@aisuckhoe.vn
-              </a>
-            </div>
-          </div> */}
         </div>
-      </div>
 
-      <Footer />
+        <Footer isAbsolute={false} />
+      </main>
     </>
   )
 }

@@ -88,48 +88,52 @@ Cảm ơn bạn đã sử dụng **AI Sức Khỏe**! Chúng tôi rất vui đư
       <Head>
         <title>AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình</title>
       </Head>
+      <main className="flex flex-col justify-between min-h-screen">
+        <Header isAbsolute={false} />
 
-      <Header isAbsolute={true} />
+        <div className="flex-1 container max-w-3xl mx-auto px-4 bg-background">
+          <div className="text-left my-12">
+            <h1 className="text-4xl font-bold mb-16 text-foreground">Điều Khoản Dịch Vụ</h1>
+          </div>
 
-      <div className="flex justify-center">
-        <div className="bg-card rounded-lg shadow-md p-8 w-full max-w-3xl my-16">
-          <div className="flex flex-col gap-4">
-            <ReactMarkdown
-              components={{
-                h1: ({ children }) => <h1 className="text-4xl font-bold">{children}</h1>,
-                h2: ({ children }) => <h2 className="text-2xl font-bold">{children}</h2>,
-                h3: ({ children }) => <h3 className="text-lg font-bold">{children}</h3>,
-                p: ({ children }) => (
-                  <p
-                    className="text-base text-gray-800 mb-4"
-                    style={{
-                      letterSpacing: '0.01em',
-                      lineHeight: '2',
-                    }}
-                  >
-                    {children}
-                  </p>
-                ),
-                li: ({ children }) => (
-                  <li
-                    className="text-base text-gray-800 mb-4"
-                    style={{
-                      letterSpacing: '0.01em',
-                      lineHeight: '2',
-                    }}
-                  >
-                    {children}
-                  </li>
-                ),
-              }}
-            >
-              {markdownContent}
-            </ReactMarkdown>
+          <div className="bg-card rounded-lg shadow-md p-8 w-full max-w-3xl my-16">
+            <div className="flex flex-col gap-4">
+              <ReactMarkdown
+                components={{
+                  h1: ({ children }) => <h1 className="text-4xl font-bold">{children}</h1>,
+                  h2: ({ children }) => <h2 className="text-2xl font-bold">{children}</h2>,
+                  h3: ({ children }) => <h3 className="text-lg font-bold">{children}</h3>,
+                  p: ({ children }) => (
+                    <p
+                      className="text-base text-gray-800 mb-4"
+                      style={{
+                        letterSpacing: '0.01em',
+                        lineHeight: '2',
+                      }}
+                    >
+                      {children}
+                    </p>
+                  ),
+                  li: ({ children }) => (
+                    <li
+                      className="text-base text-gray-800 mb-4"
+                      style={{
+                        letterSpacing: '0.01em',
+                        lineHeight: '2',
+                      }}
+                    >
+                      {children}
+                    </li>
+                  ),
+                }}
+              >
+                {markdownContent}
+              </ReactMarkdown>
+            </div>
           </div>
         </div>
-      </div>
-
-      <Footer isAbsolute={false} />
+        <Footer isAbsolute={false} />
+      </main>
     </>
   )
 }
