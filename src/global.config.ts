@@ -1,6 +1,6 @@
 export default {
   gtm: {
-    id: process.env.GTM_ID,
+    id: process.env.NEXT_PUBLIC_GTM_ID,
   },
   app: {
     supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'xinchao@aisuckhoe.com',
