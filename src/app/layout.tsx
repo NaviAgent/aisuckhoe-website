@@ -6,13 +6,12 @@ import { GoogleTagManager } from '@next/third-parties/google'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
-import globalConfig from '@/global.config'
+import { clientEnv } from '@/libs/env'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const config = await globalConfig
   return (
     <html lang="en" suppressHydrationWarning>
-      <GoogleTagManager gtmId={config.gtm.id} />
+      <GoogleTagManager gtmId={clientEnv.NEXT_PUBLIC_GTM_ID} />
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />

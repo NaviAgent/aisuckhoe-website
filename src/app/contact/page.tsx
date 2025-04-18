@@ -5,10 +5,10 @@ import { Button } from '@/components/ui/button'
 import Header from '@website/components/Header'
 import { ZaloIcon } from '@website/components/icons/zalo'
 import Footer from '@/components/Footer'
-import globalConfig from '@/global.config'
+import { clientEnv } from '@/libs/env'
 
 export default function ContactPage() {
-  const supportEmail = globalConfig.app.supportEmail
+  const supportEmail = clientEnv.NEXT_PUBLIC_SUPPORT_EMAIL
   const socialLinks = [
     {
       name: 'X',
