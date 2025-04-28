@@ -1,22 +1,30 @@
 import type { Metadata } from 'next'
 import React from 'react'
 import { InitTheme } from '@/providers/Theme/InitTheme'
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
+import { mergeOpenGraph } from '@/libs/utilities/mergeOpenGraph'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { I18nProviderClient } from '@/libs/i18n/client' // Import client provider
-import { getCurrentLocale } from '@/libs/i18n/server' // Import server helper
 
 import './globals.css'
-import { getServerSideURL } from '@/utilities/getURL'
+import { getServerSideURL } from '@/libs/utilities/getURL'
 import { getClientEnv } from '@/libs/env'
+import I18nProvider from '@/libs/i18n/provider'
+import { getStaticParams } from '@/libs/i18n/server'
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export function generateStaticParams() {
+  return getStaticParams()
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Promise<{ locale: string }>
+}) {
   const clientEnv = getClientEnv()
-  const locale = await getCurrentLocale() // Get current locale on the server
-
+  const locale = (await params).locale || 'vi'
   return (
     <html lang={locale} suppressHydrationWarning>
-      {' '}
       {/* Set lang dynamically */}
       <GoogleTagManager gtmId={clientEnv.NEXT_PUBLIC_GTM_ID} />
       <head>
@@ -25,7 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
       <body className="min-h-screen">
-        <I18nProviderClient locale={locale}>{children}</I18nProviderClient> {/* Wrap children */}
+        <I18nProvider locale={locale}>{children}</I18nProvider> {/* Wrap children */}
       </body>
     </html>
   )

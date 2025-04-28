@@ -33,7 +33,7 @@ const Header = () => {
 
       {/* Mobile Menu Button */}
       {/* <button
-        className="md:hidden p-2 rounded-lg bg-muted/10"
+        className="md:hidden p-2 rounded-xl bg-muted/10"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <X size={24} /> : <Menu size={24} />}

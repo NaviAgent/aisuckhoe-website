@@ -1,3 +1,5 @@
-import Home from './home/page'
+import PageClient from './page.client'
 
-export default Home
+export default async function Home() {
+  return <PageClient />
+}

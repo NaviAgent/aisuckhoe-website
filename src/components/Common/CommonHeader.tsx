@@ -1,15 +1,16 @@
-// components/Header.tsx
 'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
 import { getClientEnv } from '@/libs/env'
+import { useI18n } from '@/libs/i18n/client'
 
 interface HeaderProps {
   isAbsolute: boolean
 }
 
 const CommonHeader: React.FC<HeaderProps> = ({ isAbsolute }) => {
+  const t = useI18n()
   const clientEnv = getClientEnv()
   const [menuOpen, setMenuOpen] = useState(false)
   const logoURL = `${clientEnv.NEXT_PUBLIC_APP_LOGO}?${Math.floor(Date.now() / 100000)}`
@@ -39,7 +40,7 @@ const CommonHeader: React.FC<HeaderProps> = ({ isAbsolute }) => {
 
       {/* Mobile Menu Button */}
       {/* <button
-        className="md:hidden p-2 rounded-lg bg-muted/10"
+        className="md:hidden p-2 rounded-xl bg-muted/10"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -49,20 +50,20 @@ const CommonHeader: React.FC<HeaderProps> = ({ isAbsolute }) => {
       {menuOpen && (
         <div className="absolute top-16 left-0 z-10 w-full bg-background shadow-lg p-4 flex flex-col items-center space-y-4 md:hidden font-bold">
           <Link href="/blog" className="hover:text-primary" onClick={() => setMenuOpen(false)}>
-            Blog
+            {t('common.blog')}
           </Link>
           <Link href="/roadmap" className="hover:text-primary" onClick={() => setMenuOpen(false)}>
-            Roadmap
+            {t('common.roadmap')}
           </Link>
           <Link href="/pricing" className="hover:text-primary" onClick={() => setMenuOpen(false)}>
-            Gói dịch vụ
+            {t('common.pricing')}
           </Link>
           {/* Get Started Button */}
           <Link
             href="https://hoi.aisuckhoe.com"
             className="hidden md:block px-4 py-2 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/80 transition"
           >
-            Sign in
+            {t('common.signin')}
           </Link>
         </div>
       )}

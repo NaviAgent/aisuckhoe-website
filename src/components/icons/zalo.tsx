@@ -1,23 +1,12 @@
 import type React from 'react'
 export function ZaloIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-      <path d="M7.5 12.5h3v3" />
-      <path d="M7.5 9.5l3 3" />
-      <path d="M16.5 9.5h-3v3" />
-      <path d="M13.5 12.5l3 3" />
+    <svg width={25} height={9} viewBox="0 0 25 9" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        d="M12.68 2.52v-.456h1.368v6.418h-.782a.585.585 0 0 1-.586-.58 3.334 3.334 0 0 1-5.301-2.69A3.334 3.334 0 0 1 12.68 2.52M7.026 0v.208c0 .388-.052.705-.305 1.077l-.03.035a8 8 0 0 0-.246.288l-4.39 5.51h4.97v.78a.585.585 0 0 1-.585.584H0v-.367c0-.45.112-.652.253-.861l4.68-5.792H.194V0zm8.681 8.482a.49.49 0 0 1-.487-.487V0h1.463v8.482zm5.304-6.644a3.357 3.357 0 1 1 0 6.713 3.357 3.357 0 0 1 0-6.713M10.713 7.171a1.961 1.961 0 1 0 .002-3.922 1.961 1.961 0 0 0-.002 3.922m10.297-.003a1.975 1.975 0 1 0-.001-3.95 1.975 1.975 0 0 0 0 3.95"
+        fill="#0068FF"
+        fillRule="evenodd"
+      />
     </svg>
   )
 }

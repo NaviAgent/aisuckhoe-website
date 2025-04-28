@@ -1,3 +1,5 @@
+'use client'
+
 import Head from 'next/head'
 import Header from '@/components/Common/CommonHeader'
 import Footer from '@/components/Common/CommonFooter'
@@ -7,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { useI18n } from '@/libs/i18n/client'
 const faqs = [
   {
     question: 'AI Sức Khỏe là gì?',
@@ -60,32 +63,30 @@ const faqs = [
   },
 ]
 
-export default function FAQ() {
+export default function FAQPage() {
+  const t = useI18n()
   return (
-    <>
+    <main className="flex flex-col justify-between min-h-screen">
       <Head>
-        <title>AI Sức Khỏe - Trợ lý sức khoẻ thông minh mọi gia đình</title>
+        <title>{t('common.title')}</title>
       </Head>
+      <Header isAbsolute={false} />
 
-      <main className="flex flex-col justify-between min-h-screen">
-        <Header isAbsolute={false} />
-
-        <div className="flex-1 container max-w-6xl mx-auto px-4 bg-background">
-          <div className="text-left my-12">
-            <h1 className="text-4xl font-bold mb-16 text-foreground">Câu hỏi thường gặp</h1>
-          </div>
-
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={faq.question}>
-                <AccordionTrigger className="h4">{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+      <div className="flex-1 container max-w-3xl mx-auto px-4 bg-background">
+        <div className="text-center my-12">
+          <h1 className="text-4xl font-bold mb-16 text-foreground">{t('FAQPage.title')}</h1>
         </div>
-      </main>
+
+        <Accordion type="single" collapsible className="w-full">
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={faq.question}>
+              <AccordionTrigger className="h4">{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
       <Footer />
-    </>
+    </main>
   )
 }

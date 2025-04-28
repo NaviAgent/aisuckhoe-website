@@ -1,14 +1,17 @@
+'use client'
+
 import { Metadata } from 'next'
 import Head from 'next/head'
 import './pricing.css'
 import Footer from '@/components/Common/CommonFooter'
 import Header from '@/components/Common/CommonHeader'
 import PricingCard from '@/components/Pricing/PricingCard'
+import { useI18n } from '@/libs/i18n/client'
 
-export const metadata: Metadata = {
-  title: 'Pricing | Aisuckhoe',
-  description: 'Aisuckhoe Pricing Plans',
-}
+// export const metadata: Metadata = {
+//   title: 'Pricing | Aisuckhoe',
+//   description: 'Aisuckhoe Pricing Plans',
+// }
 
 const pricingData = [
   {
@@ -72,33 +75,30 @@ const pricingData = [
 ]
 
 export default function PricingPage() {
+  const t = useI18n()
   return (
-    <>
+    <main className="flex flex-col justify-between min-h-screen">
       <Head>
-        <title>AI sức khoẻ - Bảng giá</title>
+        <title>{t('common.title')}</title>
       </Head>
 
-      <main className="flex flex-col justify-between min-h-screen">
-        <Header isAbsolute={false} />
+      <Header isAbsolute={false} />
 
-        <div className="flex-1 container mx-auto px-4 bg-background">
-          <div className="">
-            <div className="text-center mt-12 mb-24">
-              <h1 className="text-4xl font-bold text-foreground">Gói dịch vụ</h1>
-              <p className="text-muted-foreground mt-2">
-                Chọn gói dịch vụ phù hợp với nhu cầu của bạn.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-1">
-              {pricingData.map((plan, index) => (
-                <PricingCard key={index} {...plan} />
-              ))}
-            </div>
+      <div className="flex-1 container mx-auto px-4 bg-background">
+        <div className="">
+          <div className="text-center mt-12 mb-24">
+            <h1 className="text-4xl font-bold text-foreground">{t('PricingPage.title')}</h1>
+            <p className="text-muted-foreground mt-2">{t('PricingPage.description')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-1">
+            {pricingData.map((plan, index) => (
+              <PricingCard key={index} {...plan} />
+            ))}
           </div>
         </div>
+      </div>
 
-        <Footer isAbsolute={false} />
-      </main>
-    </>
+      <Footer isAbsolute={false} />
+    </main>
   )
 }

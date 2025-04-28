@@ -1,11 +1,12 @@
 'use client'
 
+import { useI18n } from '@/libs/i18n/client'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 export default function HomeHero() {
+  const t = useI18n()
   const router = useRouter()
   const [inputFocused, setInputFocused] = useState(false)
 
@@ -29,7 +30,7 @@ export default function HomeHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
         >
-          Hỏi AI sức khoẻ
+          {t('HomeHero.title')}
         </motion.h1>
 
         {/* Subtitle */}
@@ -39,7 +40,7 @@ export default function HomeHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          cho bạn và cả người thân trong gia đình
+          {t('HomeHero.for your health concerns')}
         </motion.p>
 
         {/* CTA Input */}
@@ -51,9 +52,9 @@ export default function HomeHero() {
         >
           <input
             type="text"
-            placeholder="Ask me anything... 🤖💬"
+            placeholder={t('HomeHero.placeholder')}
             className="w-full px-6 py-4 text-lg font-bold border border-border rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-primary bg-white text-gray-900 placeholder-gray-500 hover:shadow-xl transition-all duration-300 cursor-text pr-12"
-            onFocus={() => router.replace('/auth')}
+            onFocus={() => window.location.replace('https://hoi.aisuckhoe.com')}
           />
           <motion.div
             className="absolute  px-6  right-4 flex items-center"
@@ -61,7 +62,7 @@ export default function HomeHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <span className="text-primary text-xl">💡</span>
+            <span className="text-primary text-xl">{t('HomeHero.send')}</span>
           </motion.div>
         </motion.div>
 
@@ -71,7 +72,7 @@ export default function HomeHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.9 }}
         >
-          Bắt đầu dùng thử tới 100 lượt hỏi miễn phí!
+          {t('HomeHero.promote')}
         </motion.p>
       </div>
     </div>

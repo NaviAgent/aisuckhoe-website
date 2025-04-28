@@ -2,6 +2,7 @@ import { Check } from 'lucide-react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import type { UrlObject } from 'url'
+import { useI18n } from '@/libs/i18n/client'
 
 interface PricingCardProps {
   name: string
@@ -26,6 +27,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   popular = false,
   buttonLink,
 }: PricingCardProps) => {
+  const t = useI18n()
   return (
     <div
       className={`pt-6 p-4 rounded-lg shadow-xl flex flex-col justify-between h-full bg-card bg-gradient-to-br from-muted to-card ${
@@ -59,7 +61,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
       </div>
       {popular && (
         <div className="absolute top-0 right-0 bg-success text-primary-foreground py-1 px-2 rounded-br-lg rounded-tl-none text-xs font-bold">
-          Popular
+          {t('common.popular')}
         </div>
       )}
     </div>
