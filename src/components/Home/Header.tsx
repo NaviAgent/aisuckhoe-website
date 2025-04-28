@@ -53,7 +53,7 @@ const Header = () => {
           </Link>
           {/* Get Started Button */}
           <Link
-            href="https://hoi.aisuckhoe.com"
+            href="https://hoi.aisuckhoe.com/chat"
             className="hidden md:block px-4 py-2 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/80 transition"
           >
             Đăng nhập

@@ -54,7 +54,7 @@ export default function HomeHero() {
             type="text"
             placeholder={t('HomeHero.placeholder')}
             className="w-full px-6 py-4 text-lg font-bold border border-border rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-primary bg-white text-gray-900 placeholder-gray-500 hover:shadow-xl transition-all duration-300 cursor-text pr-12"
-            onFocus={() => window.location.replace('https://hoi.aisuckhoe.com')}
+            onFocus={() => window.location.replace('https://hoi.aisuckhoe.com/chat')}
           />
           <motion.div
             className="absolute  px-6  right-4 flex items-center"
