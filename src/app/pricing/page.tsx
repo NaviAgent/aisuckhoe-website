@@ -1,9 +1,9 @@
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import PricingCard from '@/components/PricingCard'
 import { Metadata } from 'next'
 import Head from 'next/head'
 import './pricing.css'
+import Footer from '@/components/Common/CommonFooter'
+import Header from '@/components/Common/CommonHeader'
+import PricingCard from '@/components/Pricing/PricingCard'
 
 export const metadata: Metadata = {
   title: 'Pricing | Aisuckhoe',

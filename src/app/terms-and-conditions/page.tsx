@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '@website/components/Header'
-import Footer from '@website/components/Footer'
+import Header from '@/components/Common/CommonHeader'
+import Footer from '@/components/Common/CommonFooter'
 import ReactMarkdown from 'react-markdown'
 
 export default function TermsAndConditions() {

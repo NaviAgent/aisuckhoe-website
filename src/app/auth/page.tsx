@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Hero from './Hero'
-import Header from './Header'
+import ComingSoon from '../../components/ComingSoon/ComingSoon'
+import ComingSoonHeader from '../../components/ComingSoon/ComingSoonHeader'
 import PageClient from './page.client'
 
 export default function Auth() {
@@ -11,10 +11,10 @@ export default function Auth() {
       </Head>
       <PageClient />
 
-      <Header />
+      <ComingSoonHeader />
 
       <div className="sm:space-y-24">
-        <Hero />
+        <ComingSoon />
       </div>
     </div>
   )

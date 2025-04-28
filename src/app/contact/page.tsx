@@ -1,13 +1,13 @@
 import Head from 'next/head'
-import { Heart, MessageCircle, Facebook, Twitter } from 'lucide-react'
+import { MessageCircle, Facebook, Twitter } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import Header from '@website/components/Header'
+import Header from '@/components/Common/CommonHeader'
 import { ZaloIcon } from '@website/components/icons/zalo'
-import Footer from '@/components/Footer'
-import { clientEnv } from '@/libs/env'
+import Footer from '@/components/Common/CommonFooter'
+import { getClientEnv } from '@/libs/env'
 
 export default function ContactPage() {
+  const clientEnv = getClientEnv()
   const supportEmail = clientEnv.NEXT_PUBLIC_SUPPORT_EMAIL
   const socialLinks = [
     {

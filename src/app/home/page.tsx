@@ -1,16 +1,14 @@
 import Head from 'next/head'
-import PricingPlans from './PricingPlans'
-import Features from './Features'
-import FAQ from './FAQ'
-import Footer from '@website/components/Footer'
-import Hero from './Hero'
-// import Header from './Header'
-import { TelegramCTA, WebAppCTA } from './CTA'
+import CommonHeader from '@/components/Common/CommonFooter'
+import HomeHero from '../../components/Home/HomeHero'
 import PageClient from './page.client'
-import Link from 'next/link'
-import Header from '@/components/Header'
+import Header from '@/components/Common/CommonHeader'
+import { getI18n } from '@/libs/i18n/server' // Import server i18n helper
 
-export default function Home() {
+export default async function Home() {
+  // Fetch translations on the server
+  const t = await getI18n()
+
   return (
     <>
       <Head>
@@ -22,10 +20,11 @@ export default function Home() {
         <Header isAbsolute={false} />
 
         <div className="flex-1 container mx-auto px-4 bg-background">
-          <Hero />
+          <h1>{t('greeting')}</h1> {/* Display translated greeting */}
+          <HomeHero />
         </div>
 
-        <Footer isAbsolute={false} />
+        <CommonHeader isAbsolute={false} />
       </main>
 
       {/* <div className="flex-1 sm:space-y-24"> */}

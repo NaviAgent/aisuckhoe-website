@@ -1,0 +1,77 @@
+# Workspace Guidelines for AI Sức Khỏe Landing Page
+
+## Technical Guidelines
+- Use **Next.js** as the frontend framework for all site development
+- Style all components with **Tailwind CSS**; avoid custom CSS unless required
+- Implement dark/light mode toggle functionality using Tailwind's dark mode
+- Ensure site is fully responsive across all devices
+- Optimize performance for core web vitals and SEO
+
+## Project Features
+- Internationalization support (Vietnamese/English)
+- Static site export configuration (`output: 'export'`)
+- Modern React 19 with Tailwind CSS styling
+- Docker configuration for containerized deployment
+- Google Tag Manager integration for analytics
+
+## Structure & Component Conventions
+- Follow Next.js file-based routing conventions
+- Component names should be PascalCase (e.g., `HeroSection.jsx`)
+- Organize components into logical folders by section
+- Create reusable components for common UI elements (buttons, cards, etc.)
+- Keep localization strings in separate resource files
+
+## Animation & Interactive Elements
+- Create smooth micro-interactions for all interactive elements
+- Implement floating animations for feature cards
+- Use scroll-triggered animations to enhance UX
+- Implement hover effects consistently across buttons and cards
+- Optimize animations for performance across devices
+
+## Content Guidelines
+- Focus on concise, benefit-driven copy throughout
+- Emphasize key value propositions: AI consultation, reputable doctors, convenience
+- Maintain a professional medical tone while being accessible
+- Ensure all health-related claims are accurate in both languages
+- Keep FAQ content clear, relevant and actionable
+
+## Layout & Design
+- Follow the specified structure with header, hero, features, how-it-works, FAQ, CTA, and footer
+- Use a clean, medical-themed color palette with high contrast
+- Implement a fixed, simplified header for easy navigation
+- Feature prominent CTA buttons throughout directing to web app and Telegram
+- Design the 3D doctor/AI animation as the visual centerpiece of the hero section
+
+## Internationalization Guidelines
+- Use Next.js built-in i18n routing system
+- Implement language switcher in the header
+- Ensure all text content is externalized in localization files
+- Maintain consistent terminology across languages
+- Test UI layout with both languages to ensure proper spacing
+
+## Deployment & Infrastructure
+- Configure Docker for consistent deployment environments
+- Set up static export for optimal performance
+- Implement proper caching strategies
+- Configure Google Tag Manager for tracking key conversion metrics
+- Ensure GDPR compliance with cookie consent
+
+## Code Quality & Performance
+- Optimize image assets with Next.js Image component
+- Implement code splitting for improved performance
+- Ensure accessibility compliance throughout (WCAG standards)
+- Test performance across different device types and connection speeds
+- Implement proper SEO meta tags and structured data in both languages
+
+## Development Process
+- Create wireframe mockups before implementation
+- Begin with core layout and responsive structure
+- Implement internationalization early in the development process
+- Add interactive elements and animations progressively
+- Test thoroughly across devices and browsers before deployment
+
+## Collaboration & Communication
+- Use English for all code comments and documentation
+- Commit messages should follow conventional commits format
+- Document any technical decisions that affect performance or UX
+- Review all implementations against the original requirements
