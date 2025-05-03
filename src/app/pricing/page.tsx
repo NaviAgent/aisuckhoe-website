@@ -31,26 +31,26 @@ const pricingData = [
     discountedPrice: '12+1 giá không đổi (tiết kiệm 8%)',
     buttonLink: '#',
   },
-  {
-    name: 'Gói Cơ bản',
-    description: 'Dành cho người dùng cá nhân',
-    price: '100.000 VNĐ',
-    queries: '/ tháng',
-    features: [
-      'Cho gia đình 2 người',
-      '100 lượt/ngày (~3100 lượt hỏi mỗi tháng)',
-      '1 AI mới nhất',
-      '1 GB hình ảnh và video',
-      'Sao lưu hồ sơ gia đình',
-      'Hổ trợ qua fanpage',
-    ],
-    discountedPrice: '12+1 giá không đổi (tiết kiệm 8%)',
-    popular: true,
-    buttonLink: '#',
-  },
+  // {
+  //   name: 'Gói Cơ bản',
+  //   description: 'Dành cho người dùng cá nhân',
+  //   price: '100.000 VNĐ',
+  //   queries: '/ tháng',
+  //   features: [
+  //     'Cho gia đình 2 người',
+  //     '100 lượt/ngày (~3100 lượt hỏi mỗi tháng)',
+  //     '1 AI mới nhất',
+  //     '1 GB hình ảnh và video',
+  //     'Sao lưu hồ sơ gia đình',
+  //     'Hổ trợ qua fanpage',
+  //   ],
+  //   discountedPrice: '12+1 giá không đổi (tiết kiệm 8%)',
+  //   popular: true,
+  //   buttonLink: '#',
+  // },
   {
     name: 'Gói Linh Hoạt',
-    description: 'Phù hợp với nhu cầu ít hơn',
+    description: 'Phù hợp cho nhu cầu ít',
     price: '50.000 VNĐ',
     queries: '/ tháng',
     features: [
@@ -62,10 +62,11 @@ const pricingData = [
       'Hổ trợ qua fanpage',
     ],
     buttonLink: '#',
+    popular: true,
   },
   {
     name: 'Gói Đồng Hành',
-    description: 'Dành cho người dùng có nhu cầu cao',
+    description: 'Dành cho cá nhân cần AI đồng hành',
     price: 'Coming Soon',
     queries: '/ month',
     features: ['Tính năng đang phát triển', 'Không giới hạn lượt hỏi', 'Tính năng độc quyền'],
@@ -90,7 +91,7 @@ export default function PricingPage() {
             <h1 className="text-4xl font-bold text-foreground">{t('PricingPage.title')}</h1>
             <p className="text-muted-foreground mt-2">{t('PricingPage.description')}</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-1">
             {pricingData.map((plan, index) => (
               <PricingCard key={index} {...plan} />
             ))}

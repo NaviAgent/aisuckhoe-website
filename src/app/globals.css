@@ -19,11 +19,16 @@
   }
 
   /* 
-    #000000 black
-    #008080 teal
-    159cbc blue green
-    #000000 black
-    16a0cc blue green
+  primary: #20bbe8
+  error:  #e66b80
+  success:  #35a662
+  warning: #f39530
+  seconddatry: #489083
+  foreground: #344a53
+  black: #000000
+  teal: #008080
+  blue green : 159cbc
+  blue green: 16a0cc
   */
 
   :root {

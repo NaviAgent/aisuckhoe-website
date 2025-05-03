@@ -11,7 +11,7 @@ const translations = {
     contact: 'Liên hệ',
     privacyPolicy: 'Chính sách bảo mật',
     termsAndConditions: 'Điều khoản dịch vụ',
-    allRightsReserved: 'Bản quyền © 2025. All rights reserved.',
+    allRightsReserved: 'Bản quyền © 2025. Bảo lưu tất cả các quyền.',
   },
   TermsAndConditions: {
     title: 'Điều Khoản Dịch Vụ',
@@ -38,13 +38,17 @@ const translations = {
       title: 'Liên hệ',
       description:
         'Mọi thắc mắc về sản phẩm công nghệ AI Sức Khỏe xin gửi về địa chỉ mail dưới đây',
-      emailSupport: 'Hỗ trợ qua email',
+      emailSupport: 'Gửi email',
     },
     social: {
       title: 'Kết nối và follow đội ngũ',
       X: {
         name: 'X',
         description: 'Kết nối tài khoản trên X',
+      },
+      Telegram: {
+        name: 'Telegram',
+        description: 'Kết nối tài khoản trên Telegram',
       },
       Facebook: {
         name: 'Facebook',
@@ -61,7 +65,7 @@ const translations = {
     'for your health concerns': 'cho bạn và cả người thân trong gia đình',
     placeholder: 'Hỏi AI ngay... 🤖💬',
     send: 'Gửi',
-    promote: 'Bắt đầu dùng thử tới 100 lượt hỏi miễn phí!',
+    promote: 'Bắt đầu tham gia beta hoàn toàn miễn phí!',
   },
 }
 

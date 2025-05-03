@@ -1,6 +1,6 @@
 const translations = {
   common: {
-    title: 'AI sức khoẻ - Trợ lý sức khoẻ thông minh mọi gia đình',
+    title: 'AI sức khoẻ - Your Smart Health Companion',
     gohHome: 'Go Home',
     popular: 'Popular',
     blog: 'Blog',
@@ -21,7 +21,7 @@ const translations = {
   },
   PricingPage: {
     title: 'Plans',
-    description: 'Chọn gói dịch vụ phù hợp với nhu cầu của bạn.',
+    description: 'Choose the plan that fits your needs.',
   },
   FAQPage: {
     title: 'Frequently Asked Questions',
@@ -36,15 +36,18 @@ const translations = {
     title: 'Contact Us',
     contact: {
       title: 'Contact',
-      description:
-        'Mọi thắc mắc về sản phẩm công nghệ AI Sức Khỏe xin gửi về địa chỉ mail dưới đây',
-      emailSupport: 'Email Support',
+      description: 'Any questions or concerns about our product, please contact us at',
+      emailSupport: 'Send Email',
     },
     social: {
       title: 'Connect and follow our team',
       X: {
         name: 'X',
         description: 'Connect with us on X',
+      },
+      Telegram: {
+        name: 'Telegram',
+        description: 'Connect with us on Telegram',
       },
       Facebook: {
         name: 'Facebook',
@@ -61,7 +64,7 @@ const translations = {
     'for your health concerns': 'for your health concerns',
     placeholder: 'Ask me anything... 🤖💬',
     send: 'Send',
-    promote: 'Start your free trial with up to 100 questions!',
+    promote: 'Start your beta today!',
   },
 }
 

@@ -60,7 +60,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         )}
       </div>
       {popular && (
-        <div className="absolute top-0 right-0 bg-success text-primary-foreground py-1 px-2 rounded-br-lg rounded-tl-none text-xs font-bold">
+        <div className="absolute top-0 right-0 bg-secondary text-primary-foreground py-1 px-2 rounded-lg text-xs font-bold">
           {t('common.popular')}
         </div>
       )}

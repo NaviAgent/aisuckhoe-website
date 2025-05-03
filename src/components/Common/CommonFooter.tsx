@@ -5,6 +5,9 @@ import { useI18n } from '@/libs/i18n/client'
 import { FacebookIcon } from '../icons/facebook'
 import { XIcon } from '../icons/x'
 import { ZaloIcon } from '../icons/zalo'
+import { TelegramIcon } from '../icons/telegram'
+import { TiktokIcon } from '../icons/tiktok'
+import { YoutubeIcon } from '../icons/youtube'
 
 interface FooterProps {
   isAbsolute?: boolean
@@ -49,14 +52,14 @@ const CommonFooter: React.FC<FooterProps> = ({ isAbsolute = true }) => {
             </button> */}
             {/* New Social Links */}
             <div className="flex gap-4">
-              <Link href="https://www.facebook.com/yourpage" target="_blank">
+              <Link href="https://youtube.com/aisuckhoevn" target="_blank">
+                <YoutubeIcon className="w-6 h-6" />
+              </Link>
+              <Link href="https://www.facebook.com/aisuckhoe" target="_blank">
                 <FacebookIcon className="w-6 h-6" />
               </Link>
-              <Link href="https://www.tiktok.com/@yourpage" target="_blank">
-                <XIcon className="w-6 h-6" />
-              </Link>
-              <Link href="https://x.com/yourpage" target="_blank">
-                <XIcon className="w-12 h-6" />
+              <Link href="https://www.tiktok.com/@aisuckhoevn" target="_blank">
+                <TiktokIcon className="w-6 h-6" />
               </Link>
             </div>
           </div>
