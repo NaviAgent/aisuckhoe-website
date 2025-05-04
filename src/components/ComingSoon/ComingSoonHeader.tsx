@@ -13,7 +13,7 @@ const ComingSoonHeader = () => {
       <div className="flex items-center space-x-2">
         <Link href="/" className="flex items-center space-x-2">
           <img src={logoURL} alt="Logo" width={40} height={40} />
-          <span className="text-xl font-bold text-primary">Aisuckhoe</span>
+          <span className="text-xl font-bold text-primary">AIsuckhoe</span>
         </Link>
       </div>
     </header>

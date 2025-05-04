@@ -8,9 +8,9 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 const faqs = [
   {
     id: 1,
-    question: 'Is my data safe with Ai-Con?',
+    question: 'Is my data safe with AI-Con?',
     answer:
-      'Ai-Con is a conversational AI app offering personalized interactions with customizable personalities. It uses natural language processing and machine learning to provide dynamic suggestions and real-time information.',
+      'AI-Con is a conversational AI app offering personalized interactions with customizable personalities. It uses natural language processing and machine learning to provide dynamic suggestions and real-time information.',
   },
   { id: 2, question: 'What is Botbuzz and how does it work?' },
   { id: 3, question: 'Can I customize the personality of my AI companion?' },

@@ -8,11 +8,6 @@ import Header from '@/components/Common/CommonHeader'
 import PricingCard from '@/components/Pricing/PricingCard'
 import { useI18n } from '@/libs/i18n/client'
 
-// export const metadata: Metadata = {
-//   title: 'Pricing | Aisuckhoe',
-//   description: 'Aisuckhoe Pricing Plans',
-// }
-
 const pricingData = [
   {
     name: 'Gói Gia đình',

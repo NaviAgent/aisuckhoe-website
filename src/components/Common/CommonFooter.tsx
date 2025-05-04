@@ -52,7 +52,7 @@ const CommonFooter: React.FC<FooterProps> = ({ isAbsolute = true }) => {
             </button> */}
             {/* New Social Links */}
             <div className="flex gap-4">
-              <Link href="https://youtube.com/aisuckhoevn" target="_blank">
+              <Link href="https://youtube.com/@aisuckhoevn" target="_blank">
                 <YoutubeIcon className="w-6 h-6" />
               </Link>
               <Link href="https://www.facebook.com/aisuckhoe" target="_blank">
