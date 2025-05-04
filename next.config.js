@@ -10,6 +10,14 @@ const nextConfig = {
   images: { unoptimized: true },
   reactStrictMode: true,
   redirects,
+  async rewrites() {
+    return [
+      {
+        source: '/static/:path*',
+        destination: '/_next/static/:path*',
+      },
+    ]
+  },
 }
 
 export default nextConfig
