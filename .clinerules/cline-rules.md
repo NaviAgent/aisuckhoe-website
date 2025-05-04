@@ -1,4 +1,5 @@
-Correct and Optimized: 
+Correct and Optimized:
+This project follow Static Site Generate (SSG)
 The code must work accurately, follow the requested logic, and be optimized for performance.
 
 Beautiful and Clean:
