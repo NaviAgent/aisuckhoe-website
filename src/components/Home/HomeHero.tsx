@@ -4,22 +4,26 @@ import { useI18n } from '@/libs/i18n/client'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { Button } from '@/components/ui/button' // Add this import
 
 export default function HomeHero() {
   const t = useI18n()
-  const router = useRouter()
-  const [inputFocused, setInputFocused] = useState(false)
+  // const router = useRouter() // Removed unused variable
+  // const [inputFocused, setInputFocused] = useState(false) // Removed unused state
 
   return (
     <div>
       {/* Background Glow */}
-      <div className="absolute inset-0 flex justify-center items-center">
+      <div className="absolute inset-0 flex flex-col justify-center items-center">
         <motion.div
           className="w-[40vw] h-[40vw] bg-primary opacity-20 blur-3xl rounded-full"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.2 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
         />
+        <div className="h-20"></div>
+        <div className="h-20"></div>
+        <div className="h-20"></div>
       </div>
 
       <div className="absolute inset-0 flex flex-col justify-center items-center">
@@ -50,30 +54,18 @@ export default function HomeHero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <input
-            type="text"
-            placeholder={t('HomeHero.placeholder')}
-            className="w-full px-6 py-4 text-lg font-bold border border-border rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-primary bg-white text-gray-900 placeholder-gray-500 hover:shadow-xl transition-all duration-300 cursor-text pr-12"
-            onFocus={() => window.location.replace('https://hoi.aisuckhoe.com/chat')}
-          />
-          <motion.div
-            className="absolute  px-6  right-4 flex items-center"
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+          <Button
+            onClick={() => window.location.replace('https://hoi.aisuckhoe.com/chat')}
+            className="w-full px-6 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:shadow-xl" // Added hover:bg-gray-50 for visual feedback
+            variant="default"
+            size="clear"
           >
-            <span className="text-primary text-xl">{t('HomeHero.send')}</span>
-          </motion.div>
+            {t('HomeHero.promote')}
+          </Button>
         </motion.div>
-
-        <motion.p
-          className="text-sm text-primary font-semibold mt-1 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.9 }}
-        >
-          {t('HomeHero.promote')}
-        </motion.p>
+        <div className="h-20"></div>
+        <div className="h-20"></div>
+        <div className="h-20"></div>
       </div>
     </div>
   )

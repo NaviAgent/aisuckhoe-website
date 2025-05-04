@@ -48,7 +48,7 @@ const translations = {
       },
       Telegram: {
         name: 'Telegram',
-        description: 'Kết nối tài khoản trên Telegram',
+        description: 'Tham gia cộng đồng trên Telegram',
       },
       Facebook: {
         name: 'Facebook',

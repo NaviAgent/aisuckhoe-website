@@ -24,7 +24,7 @@ const CommonFooter: React.FC<FooterProps> = ({ isAbsolute = true }) => {
       <div className="container mx-auto px-6 lg:px-20">
         {/* Footer Bottom */}
         {/* <div className="mt-6 border-t border-border flex flex-col lg:flex-row items-center justify-between"></div> */}
-        <div className="mt-6 border-t border-border  flex flex-row justify-between items-center lg:items-center">
+        <div className="mt-6 flex flex-row justify-between items-center lg:items-center">
           {/* Links */}
           <div className="flex flex-col md:flex-row gap-4 mt-4 lg:mt-0">
             <Link href="/pricing" className="px-4 py-2 text-sm text-foreground transition">

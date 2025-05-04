@@ -59,7 +59,7 @@ const faqs = [
   {
     question: 'Làm sao tôi biết khi nào chính sách hoặc điều khoản thay đổi?',
     answer:
-      'Chúng tôi sẽ thông báo qua email hoặc trong ứng dụng ít nhất 7 ngày trước khi áp dụng bất kỳ thay đổi quan trọng nào trong Điều Khoản Dịch Vụ hoặc Chính Sách Quyền Riêng Tư. Bạn cũng có thể kiểm tra phiên bản mới nhất trên website: https://aisuckhoe.com.',
+      'Chúng tôi sẽ thông báo qua email hoặc trong ứng dụng ít nhất 7 ngày trước khi áp dụng bất kỳ thay đổi quan trọng nào trong Điều Khoản Dịch Vụ hoặc Chính Sách Quyền Riêng Tư. Bạn cũng có thể kiểm tra phiên bản mới nhất trên website: https://aisuckhoe.com/terms-and-conditions và https://aisuckhoe.com/privacy-policy',
   },
 ]
 
@@ -86,7 +86,8 @@ export default function FAQPage() {
           ))}
         </Accordion>
       </div>
-      <Footer />
+
+      <Footer isAbsolute={false} />
     </main>
   )
 }
