@@ -1,14 +1,11 @@
 import React from 'react'
 import fs from 'fs/promises'
 import path from 'path'
-import ReactMarkdown from 'react-markdown'
-import Head from 'next/head'
-import Header from '@/components/Home/Header'
 import matter from 'gray-matter'
 import CommonHeader from '@/components/Common/CommonHeader'
+import type { Metadata } from 'next'
 import CommonFooter from '@/components/Common/CommonFooter'
 import ArticleContentClient from './ArticleContentClient'
-import CommonCTAButton from '@/components/Common/CommonCTAButton'
 
 export async function generateStaticParams() {
   const contentDir = path.join(process.cwd(), 'src', 'contents', 'chuyen-trang-suc-khoe')
@@ -96,11 +93,6 @@ export default async function ChuyenTrangSucKhoePage({
 
   return (
     <main className="flex flex-col justify-between min-h-screen">
-      <Head>
-        {/* You might want to fetch the title from the content or use a different approach */}
-        <title>Article</title>
-      </Head>
-
       <CommonHeader isAbsolute={true} />
 
       <div className="flex-1 container max-w-4xl px-4 bg-background">
@@ -118,4 +110,59 @@ export default async function ChuyenTrangSucKhoePage({
       <CommonFooter isAbsolute={false} />
     </main>
   )
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const supportedExtensions = ['.md', '.html', '.css', '.js']
+  let filePath = ''
+  let fileExtension = ''
+  let foundFile = false
+  let metadata: Metadata = {
+    title: 'Article',
+    description: 'Read more about this article.',
+  }
+
+  for (const ext of supportedExtensions) {
+    const currentPath = path.join(
+      process.cwd(),
+      'src',
+      'contents',
+      'chuyen-trang-suc-khoe',
+      `${slug}${ext}`,
+    )
+    try {
+      await fs.access(currentPath) // Check if file exists
+      filePath = currentPath
+      fileExtension = ext
+      foundFile = true
+      break
+    } catch (error) {
+      // File not found, try next extension
+    }
+  }
+
+  if (foundFile && fileExtension === '.md') {
+    try {
+      const rawContent = await fs.readFile(filePath, 'utf-8')
+      const { data } = matter(rawContent)
+      metadata = {
+        title: data.title || 'Article',
+        description: data.excerpt || 'Read more about this article.',
+        keywords: data.keywords || [], // Assuming keywords is an array in frontmatter
+        authors: data.author ? [{ name: data.author }] : [{ name: 'AI' }], // Assuming author is a string in frontmatter
+        openGraph: {
+          images: data.image ? [data.image] : [],
+        },
+        // Add organization metadata if available in data
+        // For example, if you have an 'organization' field in your markdown frontmatter
+        // organization: data.organization || undefined,
+        manifest: '/manifest.json', // Assuming manifest is in the public directory
+      }
+    } catch (error) {
+      console.error('Error reading content file for metadata:', error)
+    }
+  }
+
+  return metadata
 }

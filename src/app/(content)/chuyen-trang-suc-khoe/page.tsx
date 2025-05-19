@@ -3,6 +3,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import ChuyenTrangSucKhoeClientPage from './ChuyenTrangSucKhoeClientPage'
 import matter from 'gray-matter'
+import type { Metadata } from 'next'
 
 interface Article {
   id: number
@@ -15,6 +16,21 @@ interface Article {
   readTime: string
   author: string
   size?: 'small' | 'medium' | 'large'
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  // Basic metadata for the page
+  const metadata: Metadata = {
+    title: 'Chuyên Trang Sức Khỏe',
+    description: 'Tổng hợp các bài viết về sức khỏe',
+    openGraph: {
+      title: 'Chuyên Trang Sức Khỏe',
+      description: 'Tổng hợp các bài viết về sức khỏe',
+      url: 'https://aisuckhoe.com/chuyen-trang-suc-khoe', // Replace with your actual URL
+      type: 'website',
+    },
+  }
+  return metadata
 }
 
 async function getArticles(): Promise<Article[]> {
