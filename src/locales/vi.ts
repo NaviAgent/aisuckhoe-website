@@ -11,6 +11,7 @@ const translations = {
     contact: 'Liên hệ',
     privacyPolicy: 'Chính sách bảo mật',
     termsAndConditions: 'Điều khoản dịch vụ',
+    chuyenTrangSucKhoe: 'Chuyên trang sức khỏe',
     allRightsReserved: 'Bản quyền © 2025. Bảo lưu tất cả các quyền.',
   },
   TermsAndConditions: {
@@ -65,6 +66,17 @@ const translations = {
     'for your health concerns': 'cho bạn và cả người thân trong gia đình',
     placeholder: 'Hỏi AI ngay... 🤖💬',
     send: 'Gửi',
+    promote: 'Bắt đầu tham gia beta hoàn toàn miễn phí!',
+  },
+  'chuyen-trang-suc-khoe': {
+    title: 'Chuyên trang sức khỏe',
+    description:
+      'Tìm hiểu bí quyết sống khỏe và giải đáp các thắc mắc sức khỏe hàng ngày cùng AIsuckhoe. Chuyên trang cung cấp kiến thức dễ hiểu, mẹo hay để bạn chủ động chăm sóc bản thân.',
+    search: {
+      placeholder: 'Tìm kiếm bài viết...',
+    },
+  },
+  Content: {
     promote: 'Bắt đầu tham gia beta hoàn toàn miễn phí!',
   },
 }

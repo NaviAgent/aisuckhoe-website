@@ -27,26 +27,37 @@ const CommonFooter: React.FC<FooterProps> = ({ isAbsolute = true }) => {
         <div className="mt-6 flex flex-row justify-between items-center lg:items-center">
           {/* Links */}
           <div className="flex flex-col md:flex-row gap-4 mt-4 lg:mt-0">
-            <Link href="/pricing" className="px-4 py-2 text-sm text-foreground transition">
-              {t('common.pricing')}
-            </Link>
-            <Link href="/faqs" className="px-4 py-2 text-sm text-foreground transition">
-              {t('common.faqs')}
-            </Link>
-            <Link href="/contact" className="px-4 py-2 text-sm text-foreground transition">
-              {t('common.contact')}
-            </Link>
+            <div className="grid grid-flow-row-dense grid-cols-2 grid-rows-2">
+              <Link href="/pricing" className="px-4 py-2 text-sm text-foreground transition">
+                {t('common.pricing')}
+              </Link>
+              <Link
+                href="/chuyen-trang-suc-khoe"
+                className="px-4 py-2 text-sm text-foreground transition"
+              >
+                {t('common.chuyenTrangSucKhoe')}
+              </Link>
+            </div>
           </div>
+
           <div className="flex flex-col md:flex-row gap-4 mt-4 lg:mt-0">
-            <Link href="/privacy-policy" className="px-4 py-2 text-sm text-foreground transition">
-              {t('common.privacyPolicy')}
-            </Link>
-            <Link
-              href="/terms-and-conditions"
-              className="px-4 py-2 text-sm text-foreground transition"
-            >
-              {t('common.termsAndConditions')}
-            </Link>
+            <div className="grid grid-flow-row-dense grid-cols-2 grid-rows-2">
+              <Link href="/#faqs" className="px-4 py-2 text-sm text-foreground transition">
+                {t('common.faqs')}
+              </Link>
+              <Link href="/contact" className="px-4 py-2 text-sm text-foreground transition">
+                {t('common.contact')}
+              </Link>
+              <Link href="/privacy-policy" className="px-4 py-2 text-sm text-foreground transition">
+                {t('common.privacyPolicy')}
+              </Link>
+              <Link
+                href="/terms-and-conditions"
+                className="px-4 py-2 text-sm text-foreground transition"
+              >
+                {t('common.termsAndConditions')}
+              </Link>
+            </div>
             {/* <button className="px-4 py-2 text-sm text-foreground transition">
               Socials
             </button> */}

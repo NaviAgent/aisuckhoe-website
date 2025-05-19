@@ -2,6 +2,7 @@
 import CommonFooter from '@/components/Common/CommonFooter'
 import CommonHeader from '@/components/Common/CommonHeader'
 import HomeHero from '@/components/Home/HomeHero'
+import FAQ from '@/components/Home/FAQ'
 import { useChangeLocale, useI18n } from '@/libs/i18n/client'
 import { useHeaderTheme } from '@/providers/HeaderTheme'
 import Head from 'next/head'
@@ -33,31 +34,31 @@ const PageClient: React.FC = () => {
         <div className="flex-1 container mx-auto px-4 bg-background">
           <HomeHero />
         </div>
-
-        <CommonFooter isAbsolute={false} />
       </main>
 
-      {/* <div className="flex-1 sm:space-y-24"> */}
-      {/* <main id="features" className=" container px-6 sm:p-0">
-      <Features />
-    </main>
+      <div className="flex-1 sm:space-y-24">
+        {/* <main id="features" className=" container px-6 sm:p-0">
+          <Features />
+        </main>
 
-    <main id="pricing" className="container px-6 sm:p-0">
-      <PricingPlans />
-    </main>
+        <main id="pricing" className="container px-6 sm:p-0">
+          <PricingPlans />
+        </main> */}
 
-    <main id="faq" className="px-6 sm:p-0">
-      <FAQ />
-    </main>
+        <main id="faqs" className="px-6 sm:p-0">
+          <FAQ />
+        </main>
 
-    <main className="px-6 sm:p-0">
-      <WebAppCTA />
-    </main>
+        <CommonFooter isAbsolute={false} />
 
-    <main className="px-6 sm:p-0">
-      <TelegramCTA />
-    </main> */}
-      {/* </div> */}
+        {/* <main className="px-6 sm:p-0">
+          <WebAppCTA />
+        </main>
+
+        <main className="px-6 sm:p-0">
+          <TelegramCTA />
+        </main> */}
+      </div>
 
       {/* <footer className="absolute bottom-0 w-full z-10 flex justify-between items-center px-6 md:px-12 py-4 bg-background text-foreground"></footer> */}
     </>

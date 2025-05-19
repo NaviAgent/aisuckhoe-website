@@ -2,14 +2,10 @@
 
 import { useI18n } from '@/libs/i18n/client'
 import { motion } from 'framer-motion'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { Button } from '@/components/ui/button' // Add this import
+import CommonCTAButton from '@/components/Common/CommonCTAButton'
 
 export default function HomeHero() {
   const t = useI18n()
-  // const router = useRouter() // Removed unused variable
-  // const [inputFocused, setInputFocused] = useState(false) // Removed unused state
 
   return (
     <div>
@@ -48,21 +44,11 @@ export default function HomeHero() {
         </motion.p>
 
         {/* CTA Input */}
-        <motion.div
-          className="mt-6  px-6  w-full max-w-md relative flex items-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Button
-            onClick={() => window.location.replace('https://hoi.aisuckhoe.com/chat')}
-            className="w-full px-6 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:shadow-xl" // Added hover:bg-gray-50 for visual feedback
-            variant="default"
-            size="clear"
-          >
-            {t('HomeHero.promote')}
-          </Button>
-        </motion.div>
+        <CommonCTAButton
+          onClick={() => window.location.replace('https://hoi.aisuckhoe.com/chat')}
+          text={t('HomeHero.promote')}
+          size="clear"
+        />
         <div className="h-20"></div>
         <div className="h-20"></div>
         <div className="h-20"></div>

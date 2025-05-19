@@ -101,7 +101,7 @@ Cảm ơn bạn đã sử dụng **AI Sức Khỏe**! Chúng tôi rất vui đư
           </h1>
         </div> */}
 
-        <div className="rounded-xl shadow-md p-8 w-full max-w-3xl my-16">
+        <div className="rounded-xl shadow-md p-8 w-full max-w-4xl my-16">
           <div className="flex flex-col gap-4">
             <ReactMarkdown
               components={{

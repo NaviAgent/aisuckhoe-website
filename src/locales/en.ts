@@ -11,6 +11,7 @@ const translations = {
     contact: 'Contact',
     privacyPolicy: 'Privacy Policy',
     termsAndConditions: 'Terms And Conditions',
+    chuyenTrangSucKhoe: 'Health Blog',
     allRightsReserved: 'Copyright © 2025. All rights reserved.',
   },
   TermsAndConditions: {
@@ -64,6 +65,17 @@ const translations = {
     'for your health concerns': 'for your health concerns',
     placeholder: 'Ask me anything... 🤖💬',
     send: 'Send',
+    promote: 'Start your beta today!',
+  },
+  'chuyen-trang-suc-khoe': {
+    title: 'Health Blog',
+    description:
+      'Discover the secrets to healthy living and get answers to your daily health questions with AIsuckhoe. Our specialized page provides easy-to-understand knowledge and practical tips, empowering you to take proactive care of your well-being.',
+    search: {
+      placeholder: 'Search for articles...',
+    },
+  },
+  Content: {
     promote: 'Start your beta today!',
   },
 }
